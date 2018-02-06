@@ -1,0 +1,344 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 48;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		B5EBA377202A1FFB00577DEC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5EBA376202A1FFB00577DEC /* AppDelegate.swift */; };
+		B5EBA379202A1FFB00577DEC /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5EBA378202A1FFB00577DEC /* ViewController.swift */; };
+		B5EBA37C202A1FFB00577DEC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B5EBA37A202A1FFB00577DEC /* Main.storyboard */; };
+		B5EBA37F202A1FFB00577DEC /* pizzarea.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = B5EBA37D202A1FFB00577DEC /* pizzarea.xcdatamodeld */; };
+		B5EBA381202A1FFC00577DEC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B5EBA380202A1FFC00577DEC /* Assets.xcassets */; };
+		B5EBA384202A1FFC00577DEC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B5EBA382202A1FFC00577DEC /* LaunchScreen.storyboard */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		B5EBA373202A1FFB00577DEC /* pizzarea.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = pizzarea.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		B5EBA376202A1FFB00577DEC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		B5EBA378202A1FFB00577DEC /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		B5EBA37B202A1FFB00577DEC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		B5EBA37E202A1FFB00577DEC /* pizzarea.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = pizzarea.xcdatamodel; sourceTree = "<group>"; };
+		B5EBA380202A1FFC00577DEC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		B5EBA383202A1FFC00577DEC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		B5EBA385202A1FFC00577DEC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		B5EBA370202A1FFB00577DEC /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		B5EBA36A202A1FFB00577DEC = {
+			isa = PBXGroup;
+			children = (
+				B5EBA375202A1FFB00577DEC /* pizzarea */,
+				B5EBA374202A1FFB00577DEC /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		B5EBA374202A1FFB00577DEC /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				B5EBA373202A1FFB00577DEC /* pizzarea.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		B5EBA375202A1FFB00577DEC /* pizzarea */ = {
+			isa = PBXGroup;
+			children = (
+				B5EBA376202A1FFB00577DEC /* AppDelegate.swift */,
+				B5EBA378202A1FFB00577DEC /* ViewController.swift */,
+				B5EBA37A202A1FFB00577DEC /* Main.storyboard */,
+				B5EBA380202A1FFC00577DEC /* Assets.xcassets */,
+				B5EBA382202A1FFC00577DEC /* LaunchScreen.storyboard */,
+				B5EBA385202A1FFC00577DEC /* Info.plist */,
+				B5EBA37D202A1FFB00577DEC /* pizzarea.xcdatamodeld */,
+			);
+			path = pizzarea;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		B5EBA372202A1FFB00577DEC /* pizzarea */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B5EBA388202A1FFC00577DEC /* Build configuration list for PBXNativeTarget "pizzarea" */;
+			buildPhases = (
+				B5EBA36F202A1FFB00577DEC /* Sources */,
+				B5EBA370202A1FFB00577DEC /* Frameworks */,
+				B5EBA371202A1FFB00577DEC /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = pizzarea;
+			productName = pizzarea;
+			productReference = B5EBA373202A1FFB00577DEC /* pizzarea.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		B5EBA36B202A1FFB00577DEC /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0920;
+				LastUpgradeCheck = 0920;
+				ORGANIZATIONNAME = "CreativityKills Co.";
+				TargetAttributes = {
+					B5EBA372202A1FFB00577DEC = {
+						CreatedOnToolsVersion = 9.2;
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = B5EBA36E202A1FFB00577DEC /* Build configuration list for PBXProject "pizzarea" */;
+			compatibilityVersion = "Xcode 8.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = B5EBA36A202A1FFB00577DEC;
+			productRefGroup = B5EBA374202A1FFB00577DEC /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				B5EBA372202A1FFB00577DEC /* pizzarea */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		B5EBA371202A1FFB00577DEC /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B5EBA384202A1FFC00577DEC /* LaunchScreen.storyboard in Resources */,
+				B5EBA381202A1FFC00577DEC /* Assets.xcassets in Resources */,
+				B5EBA37C202A1FFB00577DEC /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		B5EBA36F202A1FFB00577DEC /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B5EBA37F202A1FFB00577DEC /* pizzarea.xcdatamodeld in Sources */,
+				B5EBA379202A1FFB00577DEC /* ViewController.swift in Sources */,
+				B5EBA377202A1FFB00577DEC /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		B5EBA37A202A1FFB00577DEC /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				B5EBA37B202A1FFB00577DEC /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		B5EBA382202A1FFC00577DEC /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				B5EBA383202A1FFC00577DEC /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		B5EBA386202A1FFC00577DEC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		B5EBA387202A1FFC00577DEC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		B5EBA389202A1FFC00577DEC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = FMQ6R58UAV;
+				INFOPLIST_FILE = pizzarea/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = co.creativitykills.pizzarea;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		B5EBA38A202A1FFC00577DEC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = FMQ6R58UAV;
+				INFOPLIST_FILE = pizzarea/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = co.creativitykills.pizzarea;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		B5EBA36E202A1FFB00577DEC /* Build configuration list for PBXProject "pizzarea" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B5EBA386202A1FFC00577DEC /* Debug */,
+				B5EBA387202A1FFC00577DEC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		B5EBA388202A1FFC00577DEC /* Build configuration list for PBXNativeTarget "pizzarea" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B5EBA389202A1FFC00577DEC /* Debug */,
+				B5EBA38A202A1FFC00577DEC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		B5EBA37D202A1FFB00577DEC /* pizzarea.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				B5EBA37E202A1FFB00577DEC /* pizzarea.xcdatamodel */,
+			);
+			currentVersion = B5EBA37E202A1FFB00577DEC /* pizzarea.xcdatamodel */;
+			path = pizzarea.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = B5EBA36B202A1FFB00577DEC /* Project object */;
+}
