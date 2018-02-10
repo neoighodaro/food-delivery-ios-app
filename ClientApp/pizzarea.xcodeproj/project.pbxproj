@@ -29,7 +29,7 @@
 		B505CEA3202A358E000C4790 /* PizzaViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PizzaViewController.swift; sourceTree = "<group>"; };
 		B505CEA5202E0478000C4790 /* OrdersTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrdersTableViewController.swift; sourceTree = "<group>"; };
 		B505CEAA202E1C7E000C4790 /* OrderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderViewController.swift; sourceTree = "<group>"; };
-		B505CEAD202ECA83000C4790 /* ActivityIndicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ActivityIndicator.swift; path = /Users/neo/AppleProjects/pizzarea/pizzarea/Others/ActivityIndicator.swift; sourceTree = "<absolute>"; };
+		B505CEAD202ECA83000C4790 /* ActivityIndicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ActivityIndicator.swift; path = /Users/neo/AppleProjects/pizzarea/ClientApp/pizzarea/Others/ActivityIndicator.swift; sourceTree = "<absolute>"; };
 		B505CEAF202ED101000C4790 /* Order.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Order.swift; path = pizzarea/Others/Order.swift; sourceTree = SOURCE_ROOT; };
 		B505CEB1202ED12F000C4790 /* Pizza.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pizza.swift; sourceTree = "<group>"; };
 		B5EBA373202A1FFB00577DEC /* pizzarea.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = pizzarea.app; sourceTree = BUILT_PRODUCTS_DIR; };

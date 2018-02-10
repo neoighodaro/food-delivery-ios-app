@@ -2,9 +2,6 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "group:/Users/neo/AppleProjects/pizzarea/pizzarea/Others/ActivityIndicator.swift">
-   </FileRef>
-   <FileRef
       location = "group:pizzarea.xcodeproj">
    </FileRef>
    <FileRef
