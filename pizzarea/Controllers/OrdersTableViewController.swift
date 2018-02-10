@@ -7,33 +7,44 @@
 //
 
 import UIKit
+import Alamofire
 
 class OrdersTableViewController: UITableViewController {
-    
-    var orders = [
-        Order(
-            pizza: Pizza(data: [
-                "name": "Pizza Margherita",
-                "description": "Features tomatoes, sliced mozzarella, basil, and extra virgin olive oil.",
-                "amount": 39.99 as Float,
-                "image": UIImage(named: "pizza1")!
-            ]),
-            status: .pending
-        ),
-        Order(
-            pizza: Pizza(data: [
-                "name": "Bacon cheese fry",
-                "description": "Features tomatoes, bacon, cheese, basil and oil",
-                "amount": 29.99 as Float,
-                "image": UIImage(named: "pizza2")!
-            ]),
-            status: .delivered
-        )
-    ]
+
+    var orders: [Order] = []
 
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationItem.title = "Orders"
+
+        fetchOrders { orders in
+            self.orders = orders!
+            self.tableView.reloadData()
+        }
+    }
+
+    private func fetchOrders(completion: @escaping([Order]?) -> Void) {
+        Alamofire.request("http://127.0.0.1:4000/orders").validate().responseJSON { response in
+            guard response.result.isSuccess else { return completion(nil) }
+            
+            guard let rawOrders = response.result.value as? [[String: Any]?] else { return completion(nil) }
+
+            let orders = rawOrders.flatMap { ordersDict -> Order? in
+                guard let orderId = ordersDict!["id"] as? String,
+                      let orderStatus = ordersDict!["status"] as? String,
+                      var pizza = ordersDict!["pizza"] as? [String: Any] else { return nil }
+                
+                pizza["image"] = UIImage(named: pizza["image"] as! String)
+
+                return Order(
+                    id: orderId,
+                    pizza: Pizza(data: pizza),
+                    status: OrderStatus(rawValue: orderStatus)!
+                )
+            }
+
+            completion(orders)
+        }
     }
 
     @IBAction func ordersButtonPressed(_ sender: Any) {

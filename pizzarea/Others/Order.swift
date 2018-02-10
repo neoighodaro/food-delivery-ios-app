@@ -9,6 +9,7 @@
 import Foundation
 
 struct Order {
+    let id: String
     let pizza: Pizza
     var status: OrderStatus
 }

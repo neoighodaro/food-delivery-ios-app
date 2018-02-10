@@ -15,8 +15,12 @@ class PizzaListTableViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         navigationItem.title = "Select Pizza"
+        
         fetchInventory { pizzas in
+            guard pizzas != nil else { return }
+            
             self.pizzas = pizzas!
             self.tableView.reloadData()
         }
@@ -27,11 +31,11 @@ class PizzaListTableViewController: UITableViewController {
             .validate()
             .responseJSON { response in
                 guard response.result.isSuccess else { return completion(nil) }
-                guard let rawInventory = response.result.value as? [[String: Any]] else { return completion(nil) }
+                guard let rawInventory = response.result.value as? [[String: Any]?] else { return completion(nil) }
                 
                 let inventory = rawInventory.flatMap { pizzaDict -> Pizza? in
-                    var data = pizzaDict
-                    data["image"] = UIImage(named: pizzaDict["image"] as! String)
+                    var data = pizzaDict!
+                    data["image"] = UIImage(named: pizzaDict!["image"] as! String)
                     
                     return Pizza(data: data)
                 }

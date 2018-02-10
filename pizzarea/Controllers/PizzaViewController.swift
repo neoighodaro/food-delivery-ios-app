@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Alamofire
 
 class PizzaViewController: UIViewController {
     
@@ -26,11 +27,34 @@ class PizzaViewController: UIViewController {
     }
 
     @IBAction func buyButtonPressed(_ sender: Any) {
-        let alertCtrl = UIAlertController(
-            title: "Purchase Successful",
-            message: "You have ordered successfully. Your order will be confirmed soon.",
-            preferredStyle: .alert
+        Alamofire.request("http://127.0.0.1:4000/orders", method: .post, parameters: ["pizza_id": pizza!.id])
+            .validate()
+            .responseJSON { response in
+                guard response.result.isSuccess else { return self.alertError() }
+                
+                guard let status = response.result.value as? [String: Bool],
+                      let successful = status["status"] else { return self.alertError() }
+
+                successful ? self.alertSuccess() : self.alertError()
+            }
+    }
+    
+    private func alertError() {
+        return self.alert(
+            title: "Purchase unsuccessful!",
+            message: "Unable to complete purchase please try again later."
         )
+    }
+    
+    private func alertSuccess() {
+        return self.alert(
+            title: "Purchase Successful",
+            message: "You have ordered successfully, your order will be confirmed soon."
+        )
+    }
+    
+    private func alert(title: String, message: String) {
+        let alertCtrl = UIAlertController(title: title, message: message, preferredStyle: .alert)
 
         alertCtrl.addAction(UIAlertAction(title: "Okay", style: .cancel) { action in
             self.navigationController?.popViewController(animated: true)
