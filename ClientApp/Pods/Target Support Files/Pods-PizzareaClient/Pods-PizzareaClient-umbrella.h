@@ -11,6 +11,6 @@
 #endif
 
 
-FOUNDATION_EXPORT double Pods_pizzareaVersionNumber;
-FOUNDATION_EXPORT const unsigned char Pods_pizzareaVersionString[];
+FOUNDATION_EXPORT double Pods_PizzareaClientVersionNumber;
+FOUNDATION_EXPORT const unsigned char Pods_PizzareaClientVersionString[];
 
