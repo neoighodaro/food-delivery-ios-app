@@ -47,7 +47,7 @@ class OrdersTableViewController: UITableViewController {
         }
     }
 
-    @IBAction func ordersButtonPressed(_ sender: Any) {
+    @IBAction func closeButtonPressed(_ sender: Any) {
         dismiss(animated: true, completion: nil)
     }
     

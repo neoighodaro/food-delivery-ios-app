@@ -4,8 +4,8 @@
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -14,13 +14,13 @@
         <!--Root View Controller-->
         <scene sceneID="s02-eu-yIT">
             <objects>
-                <tableViewController id="twa-OQ-oqs" customClass="PizzaListTableViewController" customModule="pizzarea" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="twa-OQ-oqs" customClass="PizzaListTableViewController" customModule="PizzareaClient" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="eRi-26-By5">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="Pizza" rowHeight="100" id="m0h-3z-Qlm" customClass="PizzaTableViewCell" customModule="pizzarea" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="Pizza" rowHeight="100" id="m0h-3z-Qlm" customClass="PizzaTableViewCell" customModule="PizzareaClient" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="28" width="375" height="100"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="m0h-3z-Qlm" id="DyO-Ww-brP">
@@ -35,7 +35,7 @@
                                             </constraints>
                                         </imageView>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Pizza Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WzG-pb-2Pz">
-                                            <rect key="frame" x="104" y="11" width="94" height="20"/>
+                                            <rect key="frame" x="104" y="11" width="271" height="20"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="271" id="KOs-ai-Cpe"/>
                                             </constraints>
@@ -44,13 +44,13 @@
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Miscellaneous" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="S6T-dO-yzH">
-                                            <rect key="frame" x="104" y="31" width="86" height="16"/>
+                                            <rect key="frame" x="104" y="31" width="263" height="16"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                             <color key="textColor" white="0.35999999999999999" alpha="1" colorSpace="calibratedWhite"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$49.99" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YHf-3u-2ja">
-                                            <rect key="frame" x="96" y="69" width="94" height="20"/>
+                                            <rect key="frame" x="96" y="69" width="75.5" height="20"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="20" id="2Tw-cA-huU"/>
                                             </constraints>
@@ -107,7 +107,7 @@
         <!--Root View Controller-->
         <scene sceneID="bCU-XQ-Rbi">
             <objects>
-                <tableViewController id="PYR-Hc-ry9" customClass="OrdersTableViewController" customModule="pizzarea" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="PYR-Hc-ry9" customClass="OrdersTableViewController" customModule="PizzareaClient" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="H9b-wy-8Kg">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -147,7 +147,7 @@
                         <barButtonItem key="rightBarButtonItem" style="done" systemItem="stop" id="xav-94-Wu2">
                             <color key="tintColor" red="0.66629093890000002" green="0.28591394419999999" blue="0.58431372550000005" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                             <connections>
-                                <action selector="ordersButtonPressed:" destination="PYR-Hc-ry9" id="wSg-xc-idM"/>
+                                <action selector="closeButtonPressed:" destination="PYR-Hc-ry9" id="3ZK-W4-xQD"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -162,12 +162,12 @@
         <!--Order View Controller-->
         <scene sceneID="nB7-up-WLE">
             <objects>
-                <viewController id="HLN-Yx-Gyy" customClass="OrderViewController" customModule="pizzarea" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="HLN-Yx-Gyy" customClass="OrderViewController" customModule="PizzareaClient" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="AbS-HF-Sls">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jpL-O2-hT2" customClass="ActivityIndicator" customModule="pizzarea" customModuleProvider="target">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jpL-O2-hT2" customClass="ActivityIndicator" customModule="PizzareaClient" customModuleProvider="target">
                                 <rect key="frame" x="112" y="216" width="150" height="150"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
@@ -220,7 +220,7 @@
         <!--Pizza View Controller-->
         <scene sceneID="p1p-ak-BzO">
             <objects>
-                <viewController id="6u2-DO-DrZ" customClass="PizzaViewController" customModule="pizzarea" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="6u2-DO-DrZ" customClass="PizzaViewController" customModule="PizzareaClient" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="GqY-bO-kiW">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
