@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		909043FD8B527ACEF42F7868 /* Pods_PizzareaClient.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9482892A71C51A7352AA81C9 /* Pods_PizzareaClient.framework */; };
-		A676CF5ED3A2AA7188D61F9A /* Pods_pizzarea.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DBFCB619E1AFF3870BA83746 /* Pods_pizzarea.framework */; };
 		B505CEA4202A358E000C4790 /* PizzaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B505CEA3202A358E000C4790 /* PizzaViewController.swift */; };
 		B505CEA6202E0478000C4790 /* OrdersTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B505CEA5202E0478000C4790 /* OrdersTableViewController.swift */; };
 		B505CEAB202E1C7E000C4790 /* OrderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B505CEAA202E1C7E000C4790 /* OrderViewController.swift */; };
@@ -17,7 +16,6 @@
 		B505CEB2202ED12F000C4790 /* Pizza.swift in Sources */ = {isa = PBXBuildFile; fileRef = B505CEB1202ED12F000C4790 /* Pizza.swift */; };
 		B5EBA377202A1FFB00577DEC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5EBA376202A1FFB00577DEC /* AppDelegate.swift */; };
 		B5EBA37C202A1FFB00577DEC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B5EBA37A202A1FFB00577DEC /* Main.storyboard */; };
-		B5EBA37F202A1FFB00577DEC /* pizzarea.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = B5EBA37D202A1FFB00577DEC /* pizzarea.xcdatamodeld */; };
 		B5EBA381202A1FFC00577DEC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B5EBA380202A1FFC00577DEC /* Assets.xcassets */; };
 		B5EBA384202A1FFC00577DEC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B5EBA382202A1FFC00577DEC /* LaunchScreen.storyboard */; };
 		B5EBA38C202A20F900577DEC /* PizzaListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5EBA38B202A20F900577DEC /* PizzaListTableViewController.swift */; };
@@ -39,7 +37,6 @@
 		B5EBA373202A1FFB00577DEC /* PizzareaClient.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PizzareaClient.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B5EBA376202A1FFB00577DEC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B5EBA37B202A1FFB00577DEC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		B5EBA37E202A1FFB00577DEC /* pizzarea.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = pizzarea.xcdatamodel; sourceTree = "<group>"; };
 		B5EBA380202A1FFC00577DEC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B5EBA383202A1FFC00577DEC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B5EBA385202A1FFC00577DEC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -53,7 +50,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A676CF5ED3A2AA7188D61F9A /* Pods_pizzarea.framework in Frameworks */,
 				909043FD8B527ACEF42F7868 /* Pods_PizzareaClient.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -105,7 +101,6 @@
 			isa = PBXGroup;
 			children = (
 				B5EBA380202A1FFC00577DEC /* Assets.xcassets */,
-				B5EBA37D202A1FFB00577DEC /* pizzarea.xcdatamodeld */,
 				B5EBA385202A1FFC00577DEC /* Info.plist */,
 			);
 			path = Resources;
@@ -284,7 +279,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				B505CEA4202A358E000C4790 /* PizzaViewController.swift in Sources */,
-				B5EBA37F202A1FFB00577DEC /* pizzarea.xcdatamodeld in Sources */,
 				B505CEA6202E0478000C4790 /* OrdersTableViewController.swift in Sources */,
 				B505CEB0202ED101000C4790 /* Order.swift in Sources */,
 				B505CEAB202E1C7E000C4790 /* OrderViewController.swift in Sources */,
@@ -481,19 +475,6 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCVersionGroup section */
-		B5EBA37D202A1FFB00577DEC /* pizzarea.xcdatamodeld */ = {
-			isa = XCVersionGroup;
-			children = (
-				B5EBA37E202A1FFB00577DEC /* pizzarea.xcdatamodel */,
-			);
-			currentVersion = B5EBA37E202A1FFB00577DEC /* pizzarea.xcdatamodel */;
-			path = pizzarea.xcdatamodeld;
-			sourceTree = "<group>";
-			versionGroupType = wrapper.xcdatamodel;
-		};
-/* End XCVersionGroup section */
 	};
 	rootObject = B5EBA36B202A1FFB00577DEC /* Project object */;
 }
