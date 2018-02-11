@@ -73,6 +73,18 @@ app.post('/orders', (req, res) => {
     res.json({status: true})
 })
 
+app.put('/orders/:id', (req, res) => {
+    let order = orders.find(order => order["id"] === req.params.id)
+
+    if ( ! order) {
+        return res.json({status: false})
+    }
+
+    orders[orders.indexOf(order)]["status"] = req.body.status
+
+    return res.json({status: true})
+})
+
 app.get('/inventory', (req, res) => res.json(inventory))
 
 app.get('/', (req, res) => res.json({status: "success"}))
