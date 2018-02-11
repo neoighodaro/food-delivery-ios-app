@@ -7,89 +7,126 @@
 //
 
 import UIKit
+import Alamofire
 
 class OrdersTableViewController: UITableViewController {
 
+    var orders: [Order] = []
+
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem
+        
+        navigationItem.title = "Client Orders"
+        
+        fetchOrders { orders in
+            self.orders = orders!
+            self.tableView.reloadData()
+        }
     }
+    
+    private func fetchOrders(completion: @escaping([Order]?) -> Void) {
+        Alamofire.request("http://127.0.0.1:4000/orders").validate().responseJSON { response in
+            guard response.result.isSuccess else { return completion(nil) }
+            
+            guard let rawOrders = response.result.value as? [[String: Any]?] else { return completion(nil) }
+            
+            let orders = rawOrders.flatMap { ordersDict -> Order? in
+                guard let orderId = ordersDict!["id"] as? String,
+                      let orderStatus = ordersDict!["status"] as? String,
+                      var pizza = ordersDict!["pizza"] as? [String: Any] else { return nil }
+                
+                pizza["image"] = UIImage(named: pizza["image"] as! String)
+                
+                return Order(
+                    id: orderId,
+                    pizza: Pizza(data: pizza),
+                    status: OrderStatus(rawValue: orderStatus)!
+                )
+            }
+            
+            completion(orders)
+        }
+    }
+    
+    private func updateOrderStatus(_ status: OrderStatus, order: Order, completion: @escaping(Bool) -> Void) {
+        let url = "http://127.0.0.1:4000/orders/" + order.id
+        let params = ["status": status.rawValue]
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+        Alamofire.request(url, method: .put, parameters: params).validate().responseJSON { response in
+            guard response.result.isSuccess else { return completion(false) }
+            guard let data = response.result.value as? [String: Bool] else { return completion(false) }
+            
+            completion(data["status"]!)
+        }
     }
 
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
-        return 0
+        return 1
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
-        return 0
+        return orders.count
     }
 
-    /*
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
-
-        // Configure the cell...
-
+        let cell = tableView.dequeueReusableCell(withIdentifier: "order", for: indexPath)
+        let order = orders[indexPath.row]
+        
+        cell.textLabel?.text = order.pizza.name
+        cell.imageView?.image = order.pizza.image
+        cell.detailTextLabel?.text = "$\(order.pizza.amount) - \(order.status.rawValue)"
+        
         return cell
     }
-    */
-
-    /*
-    // Override to support conditional editing of the table view.
-    override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the specified item to be editable.
-        return true
+    
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 100.0
     }
-    */
-
-    /*
-    // Override to support editing the table view.
-    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
-        if editingStyle == .delete {
-            // Delete the row from the data source
-            tableView.deleteRows(at: [indexPath], with: .fade)
-        } else if editingStyle == .insert {
-            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }    
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let order: Order = orders[indexPath.row]
+        
+        let alertCtrl = UIAlertController(
+            title: "Change Status",
+            message: "Change the status of the order based on the progress made.",
+            preferredStyle: .actionSheet
+        )
+        
+        alertCtrl.addAction(createActionForStatus(.pending, order: order))
+        alertCtrl.addAction(createActionForStatus(.accepted, order: order))
+        alertCtrl.addAction(createActionForStatus(.dispatched, order: order))
+        alertCtrl.addAction(createActionForStatus(.delivered, order: order))
+        alertCtrl.addAction(createActionForStatus(nil, order: nil))
+        
+        present(alertCtrl, animated: true, completion: nil)
     }
-    */
-
-    /*
-    // Override to support rearranging the table view.
-    override func tableView(_ tableView: UITableView, moveRowAt fromIndexPath: IndexPath, to: IndexPath) {
-
+    
+    private func createActionForStatus(_ status: OrderStatus?, order: Order?) -> UIAlertAction {
+        let alertTitle = status == nil ? "Cancel" : status?.rawValue
+        let alertStyle: UIAlertActionStyle = status == nil ? .cancel : .default
+        
+        let action = UIAlertAction(title: alertTitle, style: alertStyle) { action in
+            if status != nil {
+                self.setStatus(status!, order: order!)
+            }
+        }
+        
+        if status != nil {
+            action.isEnabled = status?.rawValue != order?.status.rawValue
+        }
+        
+        return action
     }
-    */
+    
+    private func setStatus(_ status: OrderStatus, order: Order) {
+        updateOrderStatus(status, order: order) { successful in
+            guard successful else { return }
+            guard let index = self.orders.index(where: {$0.id == order.id}) else { return }
 
-    /*
-    // Override to support conditional rearranging of the table view.
-    override func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the item to be re-orderable.
-        return true
+            self.orders[index].status = status
+            self.tableView.reloadData()
+        }
     }
-    */
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }

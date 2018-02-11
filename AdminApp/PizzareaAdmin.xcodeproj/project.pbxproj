@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		86E19A18320A2DA00A55F2FE /* Pods_PizzareaAdmin.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C8104D0834880B59F38828A2 /* Pods_PizzareaAdmin.framework */; };
 		B5034F7B203037DA002B524E /* OrdersTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5034F7A203037DA002B524E /* OrdersTableViewController.swift */; };
+		B5034F7E20303893002B524E /* Order.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5034F7D20303893002B524E /* Order.swift */; };
+		B5034F80203038BE002B524E /* Pizza.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5034F7F203038BE002B524E /* Pizza.swift */; };
 		B5982F6A202F5BEC0039BAD4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5982F69202F5BEC0039BAD4 /* AppDelegate.swift */; };
 		B5982F6F202F5BEC0039BAD4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B5982F6D202F5BEC0039BAD4 /* Main.storyboard */; };
 		B5982F71202F5BED0039BAD4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B5982F70202F5BED0039BAD4 /* Assets.xcassets */; };
@@ -19,6 +21,8 @@
 		26D07AAB5B8047A6EC40ADA4 /* Pods-PizzareaAdmin.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PizzareaAdmin.release.xcconfig"; path = "Pods/Target Support Files/Pods-PizzareaAdmin/Pods-PizzareaAdmin.release.xcconfig"; sourceTree = "<group>"; };
 		65C29516733A2792FDCAD34A /* Pods-PizzareaAdmin.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PizzareaAdmin.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PizzareaAdmin/Pods-PizzareaAdmin.debug.xcconfig"; sourceTree = "<group>"; };
 		B5034F7A203037DA002B524E /* OrdersTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrdersTableViewController.swift; sourceTree = "<group>"; };
+		B5034F7D20303893002B524E /* Order.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Order.swift; sourceTree = "<group>"; };
+		B5034F7F203038BE002B524E /* Pizza.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pizza.swift; sourceTree = "<group>"; };
 		B5982F66202F5BEC0039BAD4 /* PizzareaAdmin.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PizzareaAdmin.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B5982F69202F5BEC0039BAD4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B5982F6E202F5BEC0039BAD4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -57,6 +61,16 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		B5034F7C20303878002B524E /* Others */ = {
+			isa = PBXGroup;
+			children = (
+				B5982F69202F5BEC0039BAD4 /* AppDelegate.swift */,
+				B5034F7D20303893002B524E /* Order.swift */,
+				B5034F7F203038BE002B524E /* Pizza.swift */,
+			);
+			path = Others;
+			sourceTree = "<group>";
+		};
 		B5982F5D202F5BEC0039BAD4 = {
 			isa = PBXGroup;
 			children = (
@@ -81,7 +95,7 @@
 				B5982F7D202F5C1B0039BAD4 /* Storyboards */,
 				B5982F7C202F5C030039BAD4 /* Controllers */,
 				B5982F7B202F5BFB0039BAD4 /* Resources */,
-				B5982F69202F5BEC0039BAD4 /* AppDelegate.swift */,
+				B5034F7C20303878002B524E /* Others */,
 			);
 			path = PizzareaAdmin;
 			sourceTree = "<group>";
@@ -243,6 +257,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B5034F80203038BE002B524E /* Pizza.swift in Sources */,
+				B5034F7E20303893002B524E /* Order.swift in Sources */,
 				B5034F7B203037DA002B524E /* OrdersTableViewController.swift in Sources */,
 				B5982F6A202F5BEC0039BAD4 /* AppDelegate.swift in Sources */,
 			);
@@ -385,6 +401,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = FMQ6R58UAV;
 				INFOPLIST_FILE = "$(SRCROOT)/PizzareaAdmin/Resources/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "co.creativitykills.pizzarea-admin";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -401,6 +418,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = FMQ6R58UAV;
 				INFOPLIST_FILE = "$(SRCROOT)/PizzareaAdmin/Resources/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "co.creativitykills.pizzarea-admin";
 				PRODUCT_NAME = "$(TARGET_NAME)";

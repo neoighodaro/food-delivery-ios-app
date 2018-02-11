@@ -6,8 +6,17 @@
 //  Copyright © 2018 CreativityKills Co. All rights reserved.
 //
 
-import UIKit
+import Foundation
 
-class Order: NSObject {
+struct Order {
+    let id: String
+    let pizza: Pizza
+    var status: OrderStatus
+}
 
+enum OrderStatus: String {
+    case pending = "Pending"
+    case accepted = "Accepted"
+    case dispatched = "Dispatched"
+    case delivered = "Delivered"
 }
