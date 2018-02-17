@@ -25,7 +25,7 @@ class OrdersTableViewController: UITableViewController {
     }
     
     private func fetchOrders(completion: @escaping([Order]?) -> Void) {
-        Alamofire.request("http://127.0.0.1:4000/orders").validate().responseJSON { response in
+        Alamofire.request(AppConstants.APIURL+"/orders").validate().responseJSON { response in
             guard response.result.isSuccess else { return completion(nil) }
             
             guard let rawOrders = response.result.value as? [[String: Any]?] else { return completion(nil) }
@@ -49,7 +49,7 @@ class OrdersTableViewController: UITableViewController {
     }
     
     private func updateOrderStatus(_ status: OrderStatus, order: Order, completion: @escaping(Bool) -> Void) {
-        let url = "http://127.0.0.1:4000/orders/" + order.id
+        let url = AppConstants.APIURL+"/orders/" + order.id
         let params = ["status": status.rawValue]
 
         Alamofire.request(url, method: .put, parameters: params).validate().responseJSON { response in

@@ -23,6 +23,7 @@
 		B5034F7A203037DA002B524E /* OrdersTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrdersTableViewController.swift; sourceTree = "<group>"; };
 		B5034F7D20303893002B524E /* Order.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Order.swift; sourceTree = "<group>"; };
 		B5034F7F203038BE002B524E /* Pizza.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pizza.swift; sourceTree = "<group>"; };
+		B53601E820361595000B3259 /* PizzareaAdmin.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = PizzareaAdmin.entitlements; sourceTree = "<group>"; };
 		B5982F66202F5BEC0039BAD4 /* PizzareaAdmin.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PizzareaAdmin.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B5982F69202F5BEC0039BAD4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B5982F6E202F5BEC0039BAD4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -92,6 +93,7 @@
 		B5982F68202F5BEC0039BAD4 /* PizzareaAdmin */ = {
 			isa = PBXGroup;
 			children = (
+				B53601E820361595000B3259 /* PizzareaAdmin.entitlements */,
 				B5982F7D202F5C1B0039BAD4 /* Storyboards */,
 				B5982F7C202F5C030039BAD4 /* Controllers */,
 				B5982F7B202F5BFB0039BAD4 /* Resources */,
@@ -162,6 +164,11 @@
 					B5982F65202F5BEC0039BAD4 = {
 						CreatedOnToolsVersion = 9.2;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.Push = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -205,11 +212,13 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-PizzareaAdmin/Pods-PizzareaAdmin-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/PushNotifications/PushNotifications.framework",
 				"${BUILT_PRODUCTS_DIR}/PusherSwift/PusherSwift.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PushNotifications.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PusherSwift.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -398,6 +407,7 @@
 			baseConfigurationReference = 65C29516733A2792FDCAD34A /* Pods-PizzareaAdmin.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = PizzareaAdmin/PizzareaAdmin.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = FMQ6R58UAV;
 				INFOPLIST_FILE = "$(SRCROOT)/PizzareaAdmin/Resources/Info.plist";
@@ -415,6 +425,7 @@
 			baseConfigurationReference = 26D07AAB5B8047A6EC40ADA4 /* Pods-PizzareaAdmin.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = PizzareaAdmin/PizzareaAdmin.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = FMQ6R58UAV;
 				INFOPLIST_FILE = "$(SRCROOT)/PizzareaAdmin/Resources/Info.plist";

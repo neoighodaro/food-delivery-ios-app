@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "A46DE778DB7A61662D945C103CE62536"
+               BlueprintIdentifier = "F4CE1D6A8F1A87FC95C44A73D441AE04"
                BuildableName = "Pods_PizzareaAdmin.framework"
                BlueprintName = "Pods-PizzareaAdmin"
                ReferencedContainer = "container:Pods.xcodeproj">
@@ -47,7 +47,7 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "A46DE778DB7A61662D945C103CE62536"
+            BlueprintIdentifier = "F4CE1D6A8F1A87FC95C44A73D441AE04"
             BuildableName = "Pods_PizzareaAdmin.framework"
             BlueprintName = "Pods-PizzareaAdmin"
             ReferencedContainer = "container:Pods.xcodeproj">

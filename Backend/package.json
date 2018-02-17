@@ -11,6 +11,7 @@
   "dependencies": {
     "body-parser": "^1.18.2",
     "express": "^4.16.2",
-    "pusher": "^1.5.1"
+    "pusher": "^1.5.1",
+    "pusher-push-notifications-node": "^0.10.1"
   }
 }

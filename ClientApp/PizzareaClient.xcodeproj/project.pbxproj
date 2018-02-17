@@ -34,6 +34,7 @@
 		B505CEAD202ECA83000C4790 /* ActivityIndicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ActivityIndicator.swift; path = /Users/neo/AppleProjects/pizzarea/ClientApp/PizzareaClient/Others/ActivityIndicator.swift; sourceTree = "<absolute>"; };
 		B505CEAF202ED101000C4790 /* Order.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Order.swift; path = PizzareaClient/Others/Order.swift; sourceTree = SOURCE_ROOT; };
 		B505CEB1202ED12F000C4790 /* Pizza.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pizza.swift; sourceTree = "<group>"; };
+		B5C313E12035BD9700B42C53 /* PizzareaClient.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = PizzareaClient.entitlements; sourceTree = "<group>"; };
 		B5EBA373202A1FFB00577DEC /* PizzareaClient.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PizzareaClient.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B5EBA376202A1FFB00577DEC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B5EBA37B202A1FFB00577DEC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -139,6 +140,7 @@
 		B5EBA375202A1FFB00577DEC /* PizzareaClient */ = {
 			isa = PBXGroup;
 			children = (
+				B5C313E12035BD9700B42C53 /* PizzareaClient.entitlements */,
 				B505CEA8202E04FF000C4790 /* Storyboards */,
 				B505CEA7202E0487000C4790 /* Controllers */,
 				B505CEA9202E051E000C4790 /* Resources */,
@@ -183,6 +185,11 @@
 					B5EBA372202A1FFB00577DEC = {
 						CreatedOnToolsVersion = 9.2;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.Push = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -226,11 +233,13 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-PizzareaClient/Pods-PizzareaClient-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/PushNotifications/PushNotifications.framework",
 				"${BUILT_PRODUCTS_DIR}/PusherSwift/PusherSwift.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PushNotifications.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PusherSwift.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -424,6 +433,7 @@
 			baseConfigurationReference = 11F77609BFEE1E57E14CEE22 /* Pods-PizzareaClient.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = PizzareaClient/PizzareaClient.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = FMQ6R58UAV;
 				INFOPLIST_FILE = "$(SRCROOT)/PizzareaClient/Resources/Info.plist";
@@ -441,6 +451,7 @@
 			baseConfigurationReference = 6F1BA52AE0FFBEFEE036DD38 /* Pods-PizzareaClient.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = PizzareaClient/PizzareaClient.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = FMQ6R58UAV;
 				INFOPLIST_FILE = "$(SRCROOT)/PizzareaClient/Resources/Info.plist";

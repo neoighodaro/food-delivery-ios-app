@@ -27,7 +27,7 @@ class PizzaViewController: UIViewController {
     }
 
     @IBAction func buyButtonPressed(_ sender: Any) {
-        Alamofire.request("http://127.0.0.1:4000/orders", method: .post, parameters: ["pizza_id": pizza!.id])
+        Alamofire.request(AppConstants.APIURL+"/orders", method: .post, parameters: ["pizza_id": pizza!.id])
             .validate()
             .responseJSON { response in
                 guard response.result.isSuccess else { return self.alertError() }

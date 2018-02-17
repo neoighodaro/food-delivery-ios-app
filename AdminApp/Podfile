@@ -8,5 +8,6 @@ target 'PizzareaAdmin' do
   # Pods for pizzarea
   pod 'PusherSwift', '~> 5.1.1'
   pod 'Alamofire', '~> 4.6.0'
+  pod 'PushNotifications'
 end
 

@@ -27,7 +27,7 @@ class PizzaListTableViewController: UITableViewController {
     }
 
     private func fetchInventory(completion: @escaping ([Pizza]?) -> Void) {
-        Alamofire.request("http://127.0.0.1:4000/inventory", method: .get)
+        Alamofire.request(AppConstants.APIURL+"/inventory", method: .get)
             .validate()
             .responseJSON { response in
                 guard response.result.isSuccess else { return completion(nil) }

@@ -4,8 +4,11 @@
 
 const app = require('express')()
 const bodyParser = require('body-parser')
-const pusher = require('pusher')(require('./config.js'))
+const Pusher = require('pusher')
+const PushNotifications = require('pusher-push-notifications-node');
 
+let pusher = new Pusher(require('./config.js')['pusher'])
+let pushNotifications = new PushNotifications(require('./config.js')['pusher_notifications']);
 
 // --------------------------------------------------------
 // Helpers
@@ -22,6 +25,22 @@ function randomString(amount) {
     return text;
 }
 
+function getStatusNotificationForOrder(order) {
+    let pizza = order['pizza']
+
+    switch (order['status']) {
+        case "Pending":
+            return false;
+        case "Accepted":
+            return `Your order "${pizza['name']}" is being processed.`
+        case "Dispatched":
+            return `Your order "${pizza['name']}" has been dispatched.`
+        case "Delivered":
+            return `Your order "${pizza['name']}" has been delivered.`
+        default:
+            return false;
+    }
+}
 
 // --------------------------------------------------------
 // In-memory database
@@ -69,6 +88,20 @@ app.post('/orders', (req, res) => {
         return res.json({status: false})
     }
 
+    pushNotifications.publish(['orders'], {
+        apns: {
+            aps: {
+                alert: {
+                    title: "New Order Arrived",
+                    body: `An order for ${pizza['name']} has been made.`,
+                },
+                sound: 'default'
+            }
+        }
+    })
+    .then(response => console.log('Just published:', response.publishId))
+    .catch(error => console.log('Error:', error));
+
     orders.unshift({id, pizza, status: "Pending"})
     res.json({status: true})
 })
@@ -81,6 +114,24 @@ app.put('/orders/:id', (req, res) => {
     }
 
     orders[orders.indexOf(order)]["status"] = req.body.status
+
+    let alertMessage = getStatusNotificationForOrder(order)
+
+    if (alertMessage !== false) {
+        pushNotifications.publish(['orders_clientID'], {
+            apns: {
+                aps: {
+                    alert: {
+                        title: "Order Information",
+                        body: alertMessage,
+                    },
+                    sound: 'default'
+                }
+            }
+        })
+        .then(response => console.log('Just published:', response.publishId))
+        .catch(error => console.log('Error:', error));
+    }
 
     return res.json({status: true})
 })
