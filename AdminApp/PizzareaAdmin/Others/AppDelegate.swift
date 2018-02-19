@@ -10,7 +10,7 @@ import UIKit
 import PushNotifications
 
 class AppConstants {
-    static let APIURL = "https://127.0.0.1:4000"
+    static let APIURL = "http://127.0.0.1:4000"
 }
 
 
@@ -22,7 +22,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     let pushNotifications = PushNotifications.shared
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-        self.pushNotifications.register(instanceId: "PUSH_NOTIFICATIONS_INSTANCE_ID")
+        self.pushNotifications.start(instanceId: "PUSH_NOTIFICATIONS_INSTANCE_ID")
+        self.pushNotifications.registerForRemoteNotifications()
         return true
     }
     
