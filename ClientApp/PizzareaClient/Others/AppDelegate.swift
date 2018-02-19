@@ -11,7 +11,8 @@ import CoreData
 import PushNotifications
 
 class AppConstants {
-    static let APIURL = "https://127.0.0.1:4000"
+    static let APIURL = "http://127.0.0.1:4000"
+    static let USER_ID = NSUUID().uuidString
 }
 
 @UIApplicationMain
@@ -22,18 +23,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     let pushNotifications = PushNotifications.shared
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-        self.pushNotifications.register(instanceId: "PUSHER_PUSH_NOTIF_INSTANCE_ID")
+        self.pushNotifications.start(instanceId: "PUSHER_NOTIF_INSTANCE_ID")
+        self.pushNotifications.registerForRemoteNotifications()
         return true
     }
     
     func application(_ application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Data) {
         self.pushNotifications.registerDeviceToken(deviceToken) {
-            try? self.pushNotifications.subscribe(interest: "orders_clientID")
+            try? self.pushNotifications.subscribe(interest: "orders_" + AppConstants.USER_ID)
         }
-    }
-    
-    func application(_ application: UIApplication, didReceiveRemoteNotification userInfo: [AnyHashable : Any], fetchCompletionHandler completionHandler: @escaping (UIBackgroundFetchResult) -> Void) {
-        print(userInfo)
     }
 }
 
