@@ -4,25 +4,18 @@
 
 const app = require('express')()
 const bodyParser = require('body-parser')
-const Pusher = require('pusher')
 const PushNotifications = require('pusher-push-notifications-node');
-
-let pusher = new Pusher(require('./config.js')['pusher'])
-let pushNotifications = new PushNotifications(require('./config.js')['pusher_notifications']);
+let pushNotifications = new PushNotifications(require('./config.js'));
 
 // --------------------------------------------------------
 // Helpers
 // --------------------------------------------------------
 
-function randomString(amount) {
-    var text = "";
-    let possible = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
-
-    for (var i = 0; i < amount; i++) {
-        text += possible.charAt(Math.floor(Math.random() * possible.length))
-    }
-
-    return text;
+function uuidv4() {
+    return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function (c) {
+        var r = Math.random() * 16 | 0, v = c == 'x' ? r : (r & 0x3 | 0x8);
+        return v.toString(16);
+    });
 }
 
 function getStatusNotificationForOrder(order) {
@@ -46,18 +39,20 @@ function getStatusNotificationForOrder(order) {
 // In-memory database
 // --------------------------------------------------------
 
+var user_id = null
+
 var orders = []
 
 let inventory = [
     {
-        id: randomString(16),
+        id: uuidv4(),
         name: "Pizza Margherita",
         description: "Features tomatoes, sliced mozzarella, basil, and extra virgin olive oil.",
         amount: 39.99,
         image: 'pizza1'
     },
     {
-        id: randomString(16),
+        id: uuidv4(),
         name: "Bacon cheese fry",
         description: "Features tomatoes, bacon, cheese, basil and oil",
         amount: 29.99,
@@ -81,7 +76,8 @@ app.use(bodyParser.urlencoded({extended: false}))
 app.get('/orders', (req, res) => res.json(orders))
 
 app.post('/orders', (req, res) => {
-    let id = randomString(16)
+    let id = uuidv4()
+    user_id = req.body.user_id
     let pizza = inventory.find(item => item["id"] === req.body.pizza_id)
 
     if (!pizza) {
@@ -102,7 +98,7 @@ app.post('/orders', (req, res) => {
     .then(response => console.log('Just published:', response.publishId))
     .catch(error => console.log('Error:', error));
 
-    orders.unshift({id, pizza, status: "Pending"})
+    orders.unshift({id, user_id, pizza, status: "Pending"})
     res.json({status: true})
 })
 
@@ -118,7 +114,7 @@ app.put('/orders/:id', (req, res) => {
     let alertMessage = getStatusNotificationForOrder(order)
 
     if (alertMessage !== false) {
-        pushNotifications.publish(['orders_clientID'], {
+        pushNotifications.publish([`orders_${user_id}`], {
             apns: {
                 aps: {
                     alert: {
