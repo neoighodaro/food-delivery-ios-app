@@ -1,5 +1,5 @@
 import Foundation
 
 struct FeatureFlags {
-    static let DeliveryTrackingEnabled = false
+    static let DeliveryTrackingEnabled = true
 }

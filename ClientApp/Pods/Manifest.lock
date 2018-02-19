@@ -1,7 +1,7 @@
 PODS:
   - Alamofire (4.6.0)
   - PusherSwift (5.1.1)
-  - PushNotifications (0.9.2)
+  - PushNotifications (0.10.1)
 
 DEPENDENCIES:
   - Alamofire (~> 4.6.0)
@@ -11,7 +11,7 @@ DEPENDENCIES:
 SPEC CHECKSUMS:
   Alamofire: f41a599bd63041760b26d393ec1069d9d7b917f4
   PusherSwift: de9238b6b9faec5275d452e5f43ce9c82b78731e
-  PushNotifications: c469b44b87c92a7654df265c9dcf973a6ce24338
+  PushNotifications: 932538facaee7bf33b38e0e274f1ced0b78f02b5
 
 PODFILE CHECKSUM: bd127a1c229682e2a51843ff5daa41d7dd129161
 

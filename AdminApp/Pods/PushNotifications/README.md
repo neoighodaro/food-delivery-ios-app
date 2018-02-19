@@ -73,14 +73,16 @@ github "pusher/push-notifications-swift"
 Run `carthage update` to build the framework and drag the built `PushNotifications.framework`into your Xcode project.
 
 ## PushNotifications Reference
-* [shared](https://pusher.github.io/push-notifications-swift/Classes/PushNotifications.html#/c:@M@PushNotifications@objc(cs)PushNotifications(cpy)shared) - [View in Source](x-source-tag://shared)
-* [register(instanceId:application:)](https://pusher.github.io/push-notifications-swift/Classes/PushNotifications.html#/c:@M@PushNotifications@objc(cs)PushNotifications(im)registerWithInstanceId:application:) - [View in Source](x-source-tag://register)
-* [registerDeviceToken(_:completion:)](https://pusher.github.io/push-notifications-swift/Classes/PushNotifications.html#/c:@M@PushNotifications@objc(cs)PushNotifications(im)registerDeviceToken:completion:) - [View in Source](x-source-tag://registerDeviceToken)
-* [subscribe(interest:completion:)](https://pusher.github.io/push-notifications-swift/Classes/PushNotifications.html#/c:@M@PushNotifications@objc(cs)PushNotifications(im)subscribeWithInterest:error:completion:) - [View in Source](x-source-tag://subscribe)
-* [setSubscriptions(interests:completion:)](https://pusher.github.io/push-notifications-swift/Classes/PushNotifications.html#/c:@M@PushNotifications@objc(cs)PushNotifications(im)setSubscriptionsWithInterests:error:completion:) - [View in Source](x-source-tag://setSubscriptions)
-* [unsubscribe(interest:completion:)](https://pusher.github.io/push-notifications-swift/Classes/PushNotifications.html#/c:@M@PushNotifications@objc(cs)PushNotifications(im)unsubscribeWithInterest:error:completion:) - [View in Source](x-source-tag://unsubscribe)
-* [unsubscribeAll(completion:)](https://pusher.github.io/push-notifications-swift/Classes/PushNotifications.html#/c:@M@PushNotifications@objc(cs)PushNotifications(im)unsubscribeAllWithCompletion:) - [View in Source](x-source-tag://unsubscribeAll)
-* [getInterests()](https://pusher.github.io/push-notifications-swift/Classes/PushNotifications.html#/c:@M@PushNotifications@objc(cs)PushNotifications(im)getInterests) - [View in Source](x-source-tag://getInterests)
+* [shared](https://pusher.github.io/push-notifications-swift/Classes/PushNotifications.html) - [View in Source](x-source-tag://shared)
+* [start(instanceId:)](https://pusher.github.io/push-notifications-swift/Classes/PushNotifications.html) - [View in Source](x-source-tag://start)
+* [registerForRemoteNotifications](https://pusher.github.io/push-notifications-swift/Classes/PushNotifications.html) - [View in Source](x-source-tag://register)
+* [registerForRemoteNotifications(options:)](https://pusher.github.io/push-notifications-swift/Classes/PushNotifications.html) - [View in Source](x-source-tag://registerOptions) 
+* [registerDeviceToken(_:completion:)]() - [View in Source](x-source-tag://registerDeviceToken)
+* [subscribe(interest:completion:)]() - [View in Source](x-source-tag://subscribe)
+* [setSubscriptions(interests:completion:)]() - [View in Source](x-source-tag://setSubscriptions)
+* [unsubscribe(interest:completion:)]() - [View in Source](x-source-tag://unsubscribe)
+* [unsubscribeAll(completion:)]() - [View in Source](x-source-tag://unsubscribeAll)
+* [getInterests()](https://pusher.github.io/push-notifications-swift/Classes/PushNotifications.html) - [View in Source](x-source-tag://getInterests)
 
 ## Communication
 
